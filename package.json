@@ -30,7 +30,8 @@
         "provenance": true
     },
     "scripts": {
-        "build": "tsgo --noEmit && tsdown"
+        "build": "tsgo --noEmit && tsdown",
+        "dev": "tsdown --watch"
     },
     "main": "./dist/index.mjs",
     "types": "./dist/index.d.mts",
@@ -49,15 +50,15 @@
         "./*": "./*"
     },
     "dependencies": {
-        "@basmilius/http-client": "^3.7.1",
-        "@flux-ui/types": "^3.0.0-next.26",
+        "@basmilius/http-client": "^3.8.0",
+        "@flux-ui/types": "^3.0.0-next.28",
         "@fortawesome/fontawesome-common-types": "^7.2.0",
         "apexcharts": "^5.6.0",
         "luxon": "^3.7.2"
     },
     "devDependencies": {
         "@types/luxon": "^3.7.1",
-        "@typescript/native-preview": "^7.0.0-dev.20260226.1",
+        "@typescript/native-preview": "^7.0.0-dev.20260227.1",
         "tsdown": "^0.21.0-beta.2"
     }
 }
