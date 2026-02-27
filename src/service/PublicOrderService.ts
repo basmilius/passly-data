@@ -21,6 +21,15 @@ export class PublicOrderService extends BaseService {
             .runArrayAdapter(PublicPayAdapter.parsePublicPaymentMethod);
     }
 
+    async postCancel(orderId: string): Promise<BaseResponse<OrderDto>> {
+        return await this
+            .request(`/orders/${orderId}/cancel`)
+            .method('post')
+            .queryString(QueryString.builder()
+                .append('language', 'nl'))
+            .runAdapter(OrderAdapter.parseOrder);
+    }
+
     async postPay(orderId: string, paymentMethodId: string): Promise<BaseResponse<TransactionDto>> {
         return await this
             .request(`/orders/${orderId}/pay`)
