@@ -15,14 +15,14 @@ export class MerchantService extends BaseService {
             .runAdapter(MerchantAdapter.parseMerchant);
     }
 
-    async getAccountManager(merchantId: string): Promise<BaseResponse<UserDto | null>> {
+    async getAccountManagers(merchantId: string): Promise<BaseResponse<UserDto[]>> {
         return await this
-            .request(`/merchants/${merchantId}/account-manager`)
+            .request(`/merchants/${merchantId}/account-managers`)
             .method('get')
             .queryString(QueryString.builder()
                 .append('language', 'nl'))
             .bearerToken()
-            .runAdapter(AuthAdapter.parseUser);
+            .runArrayAdapter(AuthAdapter.parseUser);
     }
 
     async getClaims(merchantId: string): Promise<BaseResponse<Claim[]>> {
