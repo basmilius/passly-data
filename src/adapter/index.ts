@@ -15,6 +15,7 @@ export * from './ProductAdapter';
 export * from './PublicPayAdapter';
 export * from './PublicShopAdapter';
 export * from './ReservationAdapter';
+export * from './ShortlinkAdapter';
 export * from './StatisticsAdapter';
 export * from './StatisticsBuyersAdapter';
 export * from './StatisticsEventsAdapter';

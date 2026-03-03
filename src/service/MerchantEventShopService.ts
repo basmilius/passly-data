@@ -1,6 +1,6 @@
 import { BaseResponse, BaseService, QueryString } from '@basmilius/http-client';
-import { EventAdapter } from '#data/adapter';
-import type { ShopDesignDto, ShopDto, ShopElementDto } from '#data/dto';
+import { EventAdapter, ShortlinkAdapter } from '#data/adapter';
+import type { ShopDesignDto, ShopDto, ShopElementDto, ShortlinkDto } from '#data/dto';
 
 export class MerchantEventShopService extends BaseService {
     async get(merchantId: string, eventId: string, shopId: string): Promise<BaseResponse<ShopDto>> {
@@ -21,6 +21,16 @@ export class MerchantEventShopService extends BaseService {
                 .append('language', 'nl'))
             .bearerToken()
             .runArrayAdapter(EventAdapter.parseShopElement);
+    }
+
+    async getShortlink(merchantId: string, eventId: string, shopId: string): Promise<BaseResponse<ShortlinkDto>> {
+        return await this
+            .request(`/merchants/${merchantId}/events/${eventId}/shops/${shopId}/shortlink`)
+            .method('get')
+            .queryString(QueryString.builder()
+                .append('language', 'nl'))
+            .bearerToken()
+            .runAdapter(ShortlinkAdapter.parse);
     }
 
     async patch(merchantId: string, eventId: string, shop: ShopDto): Promise<BaseResponse<ShopDto>> {
@@ -44,6 +54,8 @@ export class MerchantEventShopService extends BaseService {
         return await this
             .request(`/merchants/${merchantId}/events/${eventId}/shops/${shopId}/design`)
             .method('patch')
+            .queryString(QueryString.builder()
+                .append('language', 'nl'))
             .bearerToken()
             .body({
                 background_color: design.backgroundColor,
@@ -57,10 +69,22 @@ export class MerchantEventShopService extends BaseService {
         return await this
             .request(`/merchants/${merchantId}/events/${eventId}/shops/${shopId}/elements`)
             .method('patch')
+            .queryString(QueryString.builder()
+                .append('language', 'nl'))
             .bearerToken()
             .body({
                 elements
             })
             .runArrayAdapter(EventAdapter.parseShopElement);
+    }
+
+    async postShortlink(merchantId: string, eventId: string, shopId: string): Promise<BaseResponse<ShortlinkDto>> {
+        return await this
+            .request(`/merchants/${merchantId}/events/${eventId}/shops/${shopId}/shortlink`)
+            .method('post')
+            .queryString(QueryString.builder()
+                .append('language', 'nl'))
+            .bearerToken()
+            .runAdapter(ShortlinkAdapter.parse);
     }
 }
