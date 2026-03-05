@@ -1,6 +1,7 @@
 import { adapter, ForeignData } from '@basmilius/http-client';
 import { DateTimeAdapter, FileSystemAdapter } from '#data/adapter';
 import { MerchantDashboardKeyMetricsDto, MerchantDashboardUpcomingEventDto } from '#data/dto';
+import { optional } from '#data/util';
 
 @adapter
 export class MerchantDashboardAdapter {
@@ -18,7 +19,7 @@ export class MerchantDashboardAdapter {
             data.id,
             data.name,
             data.description,
-            FileSystemAdapter.parsePicture(data.header_file),
+            optional(data.header_file, FileSystemAdapter.parsePicture),
             data.status,
             DateTimeAdapter.parseDateTime(data.starts_on),
             data.tickets_sold,
