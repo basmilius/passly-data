@@ -53,13 +53,13 @@
         "@basmilius/http-client": "^3.10.0",
         "@flux-ui/types": "^3.0.0-next.28",
         "@fortawesome/fontawesome-common-types": "^7.2.0",
-        "apexcharts": "^5.10.0",
+        "apexcharts": "^5.10.1",
         "luxon": "^3.7.2"
     },
     "devDependencies": {
         "@types/luxon": "^3.7.1",
-        "@typescript/native-preview": "^7.0.0-dev.20260303.1",
-        "tsdown": "^0.21.0-beta.3"
+        "@typescript/native-preview": "^7.0.0-dev.20260305.1",
+        "tsdown": "^0.21.0-beta.5"
     },
     "overrides": {
         "@disabled-basmilius/http-client": "link:@basmilius/http-client",
