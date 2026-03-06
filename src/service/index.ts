@@ -1,3 +1,6 @@
+export * from './AdminService';
+export * from './AdminMerchantService';
+export * from './AdminMerchantsService';
 export * from './AuthService';
 export * from './InvitationService';
 export * from './MerchantService';

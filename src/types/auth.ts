@@ -1,5 +1,8 @@
 export type Claim =
     | 'admin:view'
+    | 'admin:finance'
+    | 'admin:merchants'
+    | 'admin:statistics'
     | 'auth:login'
     | 'buyers:view'
     | 'events:create'
