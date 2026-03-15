@@ -1,6 +1,7 @@
 export * from './address';
 export * from './auth';
 export * from './common';
+export * from './emailTemplate';
 export * from './event';
 export * from './fileSystem';
 export * from './finance';

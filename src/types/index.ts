@@ -1,4 +1,6 @@
 export type * from './auth';
+export type * from './emailTemplate';
+export type * from './emailTemplateEditor';
 export type * from './general';
 export type * from './event';
 export type * from './finance';

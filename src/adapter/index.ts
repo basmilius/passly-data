@@ -1,5 +1,6 @@
 export * from './AddressAdapter';
 export * from './AuthAdapter';
+export * from './EmailTemplateAdapter';
 export * from './BuyerAdapter';
 export * from './CommonAdapter';
 export * from './DateTimeAdapter';
