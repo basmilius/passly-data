@@ -1,15 +1,7 @@
 import { BaseResponse, BaseService, type ForeignData, QueryString } from '@basmilius/http-client';
 import { ContentCalendarAdapter } from '#data/adapter';
-import type { ContentCalendarItemChannel, ContentCalendarItemDto } from '#data/dto';
-
-export type ContentCalendarItemPayload = {
-    readonly eventId?: string | null;
-    readonly scheduledOn: string;
-    readonly status?: string;
-    readonly channel?: ContentCalendarItemChannel | null;
-    readonly content?: string | null;
-    readonly imageSuggestion?: string | null;
-};
+import type { ContentCalendarItemDto } from '#data/dto';
+import type { ContentCalendarItemChannel } from '#data/types';
 
 export class MerchantContentCalendarService extends BaseService {
     async list(merchantId: string, params?: { eventId?: string; from?: string; to?: string }): Promise<BaseResponse<ContentCalendarItemDto[]>> {
@@ -104,3 +96,12 @@ export class MerchantContentCalendarService extends BaseService {
             }));
     }
 }
+
+export type ContentCalendarItemPayload = {
+    readonly eventId?: string | null;
+    readonly scheduledOn: string;
+    readonly status?: string;
+    readonly channel?: ContentCalendarItemChannel | null;
+    readonly content?: string | null;
+    readonly imageSuggestion?: string | null;
+};
