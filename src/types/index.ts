@@ -1,5 +1,6 @@
 export type * from './aiUsage';
 export type * from './auth';
+export type * from './contentCalendar';
 export type * from './contract';
 export type * from './emailTemplate';
 export type * from './emailTemplateEditor';

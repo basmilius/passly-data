@@ -1,7 +1,6 @@
 import { dto } from '@basmilius/http-client';
-import type { CostDto } from '#data/dto';
+import type { BundleQuotaPreviewDto, CostDto } from '#data/dto';
 import type { ContractFeature } from '#data/types';
-import type { BundleQuotaPreviewDto } from './BundleQuotaPreviewDto';
 
 @dto
 export class BundleDto {

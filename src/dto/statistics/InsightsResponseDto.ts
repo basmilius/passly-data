@@ -1,6 +1,6 @@
 import { dto } from '@basmilius/http-client';
+import type { InsightDto } from '#data/dto';
 import type { InsightLanguage } from '#data/types';
-import type { InsightDto } from './InsightDto';
 
 @dto
 export class InsightsResponseDto {
@@ -41,12 +41,7 @@ export class InsightsResponseDto {
     #cards: InsightDto[];
     #lastGeneratedOn: string | null;
 
-    constructor(
-        insightsEnabled: boolean,
-        language: InsightLanguage,
-        cards: InsightDto[],
-        lastGeneratedOn: string | null
-    ) {
+    constructor(insightsEnabled: boolean, language: InsightLanguage, cards: InsightDto[], lastGeneratedOn: string | null) {
         this.#insightsEnabled = insightsEnabled;
         this.#language = language;
         this.#cards = cards;

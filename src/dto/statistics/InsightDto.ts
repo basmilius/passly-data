@@ -113,20 +113,7 @@ export class InsightDto {
     #generatedOn: string | null;
     #isStale: boolean;
 
-    constructor(
-        id: string,
-        cardType: InsightCardType,
-        language: InsightLanguage,
-        periodFrom: string,
-        periodTo: string,
-        status: InsightStatus,
-        title: string | null,
-        bodyMd: string | null,
-        signals: InsightSignalDto[] | null,
-        payload: Record<string, unknown> | null,
-        generatedOn: string | null,
-        isStale: boolean
-    ) {
+    constructor(id: string, cardType: InsightCardType, language: InsightLanguage, periodFrom: string, periodTo: string, status: InsightStatus, title: string | null, bodyMd: string | null, signals: InsightSignalDto[] | null, payload: Record<string, unknown> | null, generatedOn: string | null, isStale: boolean) {
         this.#id = id;
         this.#cardType = cardType;
         this.#language = language;

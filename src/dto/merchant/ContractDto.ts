@@ -60,14 +60,7 @@ export class ContractDto {
     #remark: string;
     #enabledFeatures: ContractFeature[];
 
-    constructor(
-        id: string,
-        startsOn: DateTime,
-        endsOn: DateTime,
-        fee: CostDto,
-        remark: string,
-        enabledFeatures: ContractFeature[]
-    ) {
+    constructor(id: string, startsOn: DateTime, endsOn: DateTime, fee: CostDto, remark: string, enabledFeatures: ContractFeature[]) {
         this.#id = id;
         this.#startsOn = startsOn;
         this.#endsOn = endsOn;

@@ -18,7 +18,6 @@ export type Claim =
     | 'finance:view'
     | 'finance:invoices:view'
     | 'insights:view'
-    | 'insights:refresh'
     | 'merchant:admin'
     | 'merchant:users'
     | 'orders:export'

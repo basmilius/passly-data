@@ -1,9 +1,6 @@
 import { dto } from '@basmilius/http-client';
 import type { DateTime } from 'luxon';
-
-export type ContentCalendarItemStatus = 'draft' | 'scheduled' | 'published' | 'archived';
-export type ContentCalendarItemSource = 'manual' | 'ai' | 'insight';
-export type ContentCalendarItemChannel = 'instagram' | 'facebook' | 'twitter' | 'tiktok';
+import type { ContentCalendarItemChannel, ContentCalendarItemSource, ContentCalendarItemStatus } from '#data/types';
 
 @dto
 export class ContentCalendarItemDto {

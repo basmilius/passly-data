@@ -12,7 +12,7 @@ export class MerchantAdapter {
             DateTimeAdapter.parseDateTime(data.ends_on),
             PaymentAdapter.parseCost(data.fee),
             data.remark,
-            (data.enabled_features ?? data.features ?? []) as ContractDto['enabledFeatures']
+            data.enabled_features
         );
     }
 
